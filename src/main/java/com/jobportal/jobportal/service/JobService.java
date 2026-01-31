@@ -1,14 +1,17 @@
 package com.jobportal.jobportal.service;
 
+import com.jobportal.jobportal.dto.JobRequestDTO;
+import com.jobportal.jobportal.dto.JobResponseDTO;
 import com.jobportal.jobportal.model.Job;
 
 import java.util.List;
 
 public interface JobService {
-    Job updateJob(Long id ,Job job);
-    List<Job> getAllJobs();
+    void deleteJob(Long id);
+    JobResponseDTO updateJob(Long id , JobRequestDTO request);
+    List<JobResponseDTO> getAllJobs();
 
-    Job getJobById(Long id);
+    JobResponseDTO getJobById(Long id);
 
-    Job createJob(Job job);
+    JobResponseDTO createJob(JobRequestDTO request);
 }
